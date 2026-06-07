@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://tools.android.com/tools"
+    android:id="@+id/main_layout_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0F172A"
+    tools:context=".MainActivity">
+
+    <!-- LAYER 1: ตัวเกม Custom View (วาดฉาก, ตัวละคร, เหรียญ, อุปสรรค) -->
+    <com.example.coinwalk2.GameView
+        android:id="@+id/gameView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- LAYER 2: UI Overlay (เผื่อคุณต้องการประยุกต์ใช้ปุ่มหรือข้อความของ Android แท้ๆ ซ้อนบนเกมในอนาคต) -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:keepScreenOn="true"> <!-- สั่งให้หน้าจอไม่ดับขณะเล่นเกม -->
+
+        <!-- คำแนะนำการควบคุมแบบจางๆ ด้านล่างหน้าจอ (จะหายไปในใจคนเล่นเอง) -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="40dp"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:alpha="0.4">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="← SWIPE TO MOVE →"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="↑ JUMP  |  ↓ DUCK"
+                android:textColor="#FFFFFF"
+                android:textSize="10sp"
+                android:layout_marginTop="4dp"
+                android:letterSpacing="0.1" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>
