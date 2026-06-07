@@ -145,7 +145,6 @@ public class GameView extends View {
                 int obstacleLane = random.nextInt(3);
                 float obsX = (obstacleLane * laneWidth) + (laneWidth / 2f);
 
-                // 4️⃣ [🔥 ไวขึ้น] ปรับความเร็วการร่วงของอุปสรรคให้เร็วขึ้นแบบก้าวกระโดดตามเลเวล
                 float obsSpeed = 10f + (currentLevel * 3.5f);
 
                 float obsType = random.nextBoolean() ? 1f : 2f;
@@ -172,7 +171,7 @@ public class GameView extends View {
                     } else if (obs.speedY == 2f && isDucking) {
                         // ก้มพ้น
                     } else {
-                        resetGameData();
+                        isPaused = true;
                         if (updateListener != null) {
                             updateListener.onGameOver();
                         }
@@ -320,5 +319,12 @@ public class GameView extends View {
     @Override
     public boolean performClick() {
         return super.performClick();
+    }
+    public void revivePlayer() {
+        // 1. เคลียร์สิ่งกีดขวางบนหน้าจอทิ้งให้หมด ป้องกันการเกิดมาแล้วชนซ้ำทันที
+        obstacles.clear();
+
+        // 2. ปลดล็อกสถานะหยุดเกม ให้กลับมาเดินหน้าต่อ
+        isPaused = false;
     }
 }
