@@ -11,14 +11,14 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:layout_marginBottom="60dp"
-        android:text="COIN WALK"
-        android:textColor="#FFFFFF"
-        android:textSize="44sp"
-        android:textStyle="bold"
         android:shadowColor="#6366F1"
         android:shadowDx="6"
         android:shadowDy="6"
-        android:shadowRadius="1" />
+        android:shadowRadius="1"
+        android:text="COIN WALK"
+        android:textColor="#FFFFFF"
+        android:textSize="44sp"
+        android:textStyle="bold" />
 
     <!-- ปุ่มกดเริ่มเล่นเกม -->
     <TextView

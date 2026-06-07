@@ -129,7 +129,7 @@ public class GameView extends View {
             }
 
             if (jumpActionTime > 0) {
-                playerJumpY = -140f * (1f - (Math.abs(6 - jumpActionTime) / 6f));
+                playerJumpY = -180f * (1f - (Math.abs(10 - jumpActionTime) / 10f));
                 jumpActionTime--;
             } else {
                 playerJumpY = 0f;
@@ -302,7 +302,7 @@ public class GameView extends View {
                                 }
                             } else {
                                 if (jumpActionTime <= 0 && !isDucking) {
-                                    jumpActionTime = 12;
+                                    jumpActionTime = 30;
                                 }
                             }
                         }
